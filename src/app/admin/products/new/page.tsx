@@ -2,6 +2,9 @@ import Link from 'next/link';
 import { prisma } from '@/lib/prisma';
 import ProductForm from '../../components/ProductForm';
 
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 export default async function NewProductPage() {
   const categories = await prisma.category.findMany({
     where: { active: true },
