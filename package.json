@@ -1,14 +1,15 @@
 {
   "name": "hlebblack-next",
   "private": true,
-  "scripts": {
+   "scripts": {
     "dev": "next dev -p 4444",
     "build": "prisma generate && next build",
     "start": "next start",
     "lint": "next lint",
     "db:push": "prisma db push",
     "db:seed": "tsx prisma/seed.ts",
-    "postinstall": "prisma generate"
+    "postinstall": "prisma generate",
+    "vercel-build": "prisma generate && prisma migrate deploy && next build"
   },
   "prisma": {
     "seed": "tsx prisma/seed.ts"
@@ -28,4 +29,5 @@
     "tsx": "^4.20.3",
     "typescript": "^5.8.3"
   }
+  
 }
